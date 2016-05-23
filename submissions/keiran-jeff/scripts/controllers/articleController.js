@@ -10,8 +10,10 @@
         rendering of articles. What will happen when a user navigates
         back and forth between home and about?
     /* TODO: Also be sure to reveal only the articles section */
-    console.log('Articles controller running...');
-    Article.fetchAll(articleView.initIndexPage);
+    if (Article.all.length === 0) {
+      Article.fetchAll(articleView.initIndexPage);
+    }
+
     $('#about').hide();
     $('#articles').fadeIn();
   };
