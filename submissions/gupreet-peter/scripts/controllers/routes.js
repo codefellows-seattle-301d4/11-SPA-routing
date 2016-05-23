@@ -3,6 +3,7 @@
     single controller function to handle it: */
    page('/', articlesController.index);
    page('/about', aboutController.index);
+   page('/admin', adminController.index);
 
 
 /* DONE: What function do we call to activate page.js?

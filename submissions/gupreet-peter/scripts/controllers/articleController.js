@@ -14,6 +14,8 @@
     Article.fetchAll(articleView.initIndexPage);
     $('#about').hide();
     $('#articles').show();
+    $('#blog-stats').hide();
+
   };
 
   module.articlesController = articlesController;
