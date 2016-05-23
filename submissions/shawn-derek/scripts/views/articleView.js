@@ -89,6 +89,7 @@
 
   articleView.initIndexPage = function() {
     Article.all.forEach(function(a){
+      console.log(a.title);
       if($('#category-filter option:contains("'+ a.category + '")').length === 0) {
         $('#category-filter').append(a.toHtml($('#category-filter-template')));
       };

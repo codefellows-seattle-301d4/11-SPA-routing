@@ -14,5 +14,6 @@ function index(){
 
 function about(){
   console.log('we made it to about');
+  aboutController.index();
 
 }
