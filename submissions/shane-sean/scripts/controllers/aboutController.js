@@ -3,7 +3,8 @@
 
   aboutController.index = function() {
     /* TODO:NE We only want to display the about section! */
-    $('section').hide();
+    $('#articles').hide();
+    $('content').hide();
     $('#about').fadeIn('fast');
   };
 

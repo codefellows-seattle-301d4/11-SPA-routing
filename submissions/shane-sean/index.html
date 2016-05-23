@@ -31,6 +31,9 @@
      <script id="category-filter-template" type="text/x-handlebars-template">
       <option value="{{category}}">{{category}}</option>
      </script>
+     <script id="author-template" type="text/x-handlebars-template">
+       <li><strong>{{name}}</strong>: {{numWords}} words written</li>
+     </script>
   </head>
   <body>
     <header class="site-header clearfix">
@@ -45,6 +48,7 @@
         <ul>
           <li class="tab" data-content="articles"><a href="/" class="icon-home"> Home</a></li>
           <li class="tab" data-content="about"><a href="/about" class="icon-address-book"> About</a></li>
+          <li class="tab" data-content="admin"><a href="/admin"> Admin</a></li>
           <li><a href="http://twitter.com/codefellowsSEA" target="_blank" class="icon-twitter3"> Twitter</a></li>
           <li><a href="http://github.com/" target="_blank" class="icon-github"> GitHub</a></li>
         </ul>
@@ -80,11 +84,22 @@
           </ul>
         </section>
       </section>
+      <content>
+        <h1>Blog Stats</h1>
+        <section id="blog-stats">
+          <dt>Total articles:</dt> <dd class="articles"></dd>
+          <dt>Total words:</dt> <dd class="words"></dd>
+          <h2>Author Stats</h2>
+          <p><em>Details on who is writing, and how much writing they are doing...</em></p>
+          <ul class="author-stats">
+          </ul>
+        </section>
+      </content>
     </main>
     <footer>
       &copy; 2016 Code Fellows | Static Blog | Happy Ipsum!
     </footer>
-    <!-- TODO:NE Be sure to include the routing & controller
+    <!-- :NE Be sure to include the routing & controller
         functionality with the correct script files. -->
 
     <script src="vendor/scripts/jquery-2.1.4.js"></script>
@@ -98,6 +113,7 @@
     <script src="scripts/views/articleView.js"></script>
     <script src="scripts/controllers/aboutController.js"></script>
     <script src="scripts/controllers/articleController.js"></script>
+    <script src="scripts/controllers/adminController.js"></script>
     <script src="scripts/controllers/routes.js"></script>
 
     <!-- TODO:NE These function calls inside the script tag have been
