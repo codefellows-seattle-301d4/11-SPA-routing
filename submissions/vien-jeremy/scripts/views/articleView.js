@@ -32,14 +32,14 @@
   /* TODO: Once the routes are handling / and /about, we can delete
       this handleMainNav function. YESSSS!
   /* TODO: Remember to also remove any calls to this function elsewhere. */
-  articleView.handleMainNav = function() {
-    $('.main-nav').on('click', '.tab', function(e) {
-      $('.tab-content').hide();
-      $('#' + $(this).data('content')).fadeIn();
-    });
-
-    $('.main-nav .tab:first').click();
-  };
+  // articleView.handleMainNav = function() {
+  //   $('.main-nav').on('click', '.tab', function(e) {
+  //     $('.tab-content').hide();
+  //     $('#' + $(this).data('content')).fadeIn();
+  //   });
+  //
+  //   $('.main-nav .tab:first').click();
+  // };
 
   articleView.setTeasers = function() {
     $('a.read-on').show();
@@ -88,6 +88,7 @@
   };
 
   articleView.initIndexPage = function() {
+    
     Article.all.forEach(function(a){
       if($('#category-filter option:contains("'+ a.category + '")').length === 0) {
         $('#category-filter').append(a.toHtml($('#category-filter-template')));
@@ -96,11 +97,12 @@
         $('#author-filter').append(a.toHtml($('#author-filter-template')));
       };
       $('#articles').append(a.toHtml($('#article-template')));
+
     });
 
     articleView.handleCategoryFilter();
     articleView.handleAuthorFilter();
-    articleView.handleMainNav();
+    // articleView.handleMainNav();
     articleView.setTeasers();
   };
 
