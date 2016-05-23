@@ -29,17 +29,17 @@
     });
   };
 
-  /* TODO: Once the routes are handling / and /about, we can delete
+  /* DONE: Once the routes are handling / and /about, we can delete
       this handleMainNav function. YESSSS!
-  /* TODO: Remember to also remove any calls to this function elsewhere. */
-  articleView.handleMainNav = function() {
-    $('.main-nav').on('click', '.tab', function(e) {
-      $('.tab-content').hide();
-      $('#' + $(this).data('content')).fadeIn();
-    });
-
-    $('.main-nav .tab:first').click();
-  };
+  /* DONE: Remember to also remove any calls to this function elsewhere. */
+  // articleView.handleMainNav = function() {
+  //   $('.main-nav').on('click', '.tab', function(e) {
+  //     $('.tab-content').hide();
+  //     $('#' + $(this).data('content')).fadeIn();
+  //   });
+  //
+  //   $('.main-nav .tab:first').click();
+  // };
 
   articleView.setTeasers = function() {
     $('a.read-on').show();
@@ -100,11 +100,11 @@
 
     articleView.handleCategoryFilter();
     articleView.handleAuthorFilter();
-    articleView.handleMainNav();
+    // articleView.handleMainNav();
     articleView.setTeasers();
   };
   Article.fetchAll(articleView.initIndexPage);
-  
+
   articleView.initAdminPage = function() {
     var template = Handlebars.compile($('#author-template').text());
 
