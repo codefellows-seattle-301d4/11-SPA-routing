@@ -2,7 +2,7 @@
   var aboutController = {};
 
   aboutController.index = function() {
-    /* TODO: We only want to display the about section! */
+    /* TODO:DONE We only want to display the about section! */
     $('#articles').hide();
     $('#about').show();
   };

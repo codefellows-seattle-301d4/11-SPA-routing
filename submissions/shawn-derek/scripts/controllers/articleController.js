@@ -1,7 +1,7 @@
 (function(module) {
   var articlesController = {};
 
-  /* TODO: Try and initialize our database table when the controller
+  /* TODO:DONE Try and initialize our database table when the controller
       first loads */
   Article.createTable();
   Article.fetchAll(articleView.initIndexPage);

@@ -16,7 +16,7 @@
     });
   };
 
-  articleView.handleCategoryFilter = function() {
+  articleView.handleCategoryFilter = function(filterid) {
     $('#category-filter').on('change', function() {
       if ($(this).val()) {
         $('article').hide();
@@ -29,17 +29,10 @@
     });
   };
 
-  /* TODO: Once the routes are handling / and /about, we can delete
+  /* TODO:DONE Once the routes are handling / and /about, we can delete
       this handleMainNav function. YESSSS!
-  /* TODO: Remember to also remove any calls to this function elsewhere. */
-  // articleView.handleMainNav = function() {
-  //   $('.main-nav').on('click', '.tab', function(e) {
-  //     $('.tab-content').hide();
-  //     $('#' + $(this).data('content')).fadeIn();
-  //   });
-  //
-  //   $('.main-nav .tab:first').click();
-  // };
+  /* TODO:DONE Remember to also remove any calls to this function elsewhere. */
+
 
   articleView.setTeasers = function() {
     $('a.read-on').show();
@@ -87,9 +80,23 @@
     $('#article-json').val(JSON.stringify(article) + ',');
   };
 
+
+  articleView.sortArticles = function(item) {
+    Article.all.sort(function(a,b){
+      if( a[item] > b[item] ) {
+        return 1;
+      }
+      if ( a[item] < b[item] ){
+        return -1;
+      }
+      return 0;
+    });
+
+  };
+
   articleView.initIndexPage = function() {
+
     Article.all.forEach(function(a){
-      console.log(a.title);
       if($('#category-filter option:contains("'+ a.category + '")').length === 0) {
         $('#category-filter').append(a.toHtml($('#category-filter-template')));
       };
@@ -99,9 +106,20 @@
       $('#articles').append(a.toHtml($('#article-template')));
     });
 
+    $('#category-filter').append($('#category-filter option').detach().sort(function(a,b){
+      var aValue = a.getAttribute('value');
+      var bValue = b.getAttribute('value');
+      return (aValue > bValue)?1:((aValue < bValue)?-1:0);
+    }));
+
+    $('#author-filter').append($('#author-filter option').detach().sort(function(a,b){
+      var aValue = a.getAttribute('value');
+      var bValue = b.getAttribute('value');
+      return (aValue > bValue)?1:((aValue < bValue)?-1:0);
+    }));
+
     articleView.handleCategoryFilter();
     articleView.handleAuthorFilter();
-    // articleView.handleMainNav();
     articleView.setTeasers();
   };
 
