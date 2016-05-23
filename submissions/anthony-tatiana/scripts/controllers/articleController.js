@@ -14,10 +14,6 @@
       Article.fetchAll(articleView.initIndexPage);
     }
 
-    // if (Article.all.length === 0) {
-    //   Article.fetchAll(articleView.initIndexPage);
-    // }
-
     $('#about').hide();
     $('#articles').show();
   };
