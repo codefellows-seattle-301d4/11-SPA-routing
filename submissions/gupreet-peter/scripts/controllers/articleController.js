@@ -12,6 +12,7 @@
 
     /* DONE: Also be sure to reveal only the articles section */
     Article.fetchAll(articleView.initIndexPage);
+    $('#about').hide();
     $('#articles').show();
   };
 
