@@ -84,9 +84,11 @@
     <footer>
       &copy; 2016 Code Fellows | Static Blog | Happy Ipsum!
     </footer>
-    <!-- TODO: Be sure to include the routing & controller
+    <!-- DONE: Be sure to include the routing & controller
         functionality with the correct script files. -->
-
+    <script src="/scripts/controllers/routes.js"></script>
+    <script src="/scripts/controllers/aboutController.js"></script>
+    <script src="/scripts/controllers/articleController.js"></script>
     <script src="/vendor/scripts/jquery-2.1.4.js"></script>
     <script src="/vendor/scripts/handlebars.js"></script>
     <script src="/vendor/scripts/marked.js"></script>
@@ -96,11 +98,8 @@
     <script src="/scripts/models/article.js"></script>
     <script src="/scripts/views/articleView.js"></script>
 
-    <!-- TODO: These function calls inside the script tag have been
+    <!-- DONE: These function calls inside the script tag have been
         ordered to leave. Please place them in a more appropriate location. -->
-    <script>
-      Article.createTable();
-      Article.fetchAll(articleView.initIndexPage);
-    </script>
+
   </body>
 </html>

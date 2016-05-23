@@ -34,6 +34,8 @@
     );
   };
 
+  Article.createTable();
+
   Article.truncateTable = function(callback) {
     webDB.execute(
       'DELETE FROM articles;',
