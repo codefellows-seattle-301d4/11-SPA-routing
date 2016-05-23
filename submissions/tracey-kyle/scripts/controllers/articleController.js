@@ -12,13 +12,9 @@
 
     /* DONE: Also be sure to reveal only the articles section */
 
-    $('.main-nav').on('click', '.tab', function(e) {
-      $('.tab-content').hide();
-      $('#' + $(this).data('content')).fadeIn();
-    });
-
-    $('.main-nav .tab:first').click();
+    Article.fetchAll(articleView.initIndexPage);
+    $('#articles').show();
+    $('#about').hide();
   };
-
   module.articlesController = articlesController;
 })(window);

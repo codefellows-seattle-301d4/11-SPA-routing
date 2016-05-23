@@ -103,7 +103,7 @@
     // articleView.handleMainNav();
     articleView.setTeasers();
   };
-  Article.fetchAll(articleView.initIndexPage);
+
 
   articleView.initAdminPage = function() {
     var template = Handlebars.compile($('#author-template').text());

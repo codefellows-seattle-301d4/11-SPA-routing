@@ -3,12 +3,9 @@
 
   aboutController.index = function() {
     /* DONE: We only want to display the about section! */
-    $('.main-nav').on('click', '.tab', function(e) {
-      $('.tab-content').hide();
-      $('#' + $(this).data('content')).fadeIn();
-    });
+    $('#articles').hide();
+    $('#about').show();
 
-    $('.main-nav .tab:second').click();
   };
 
   module.aboutController = aboutController;
