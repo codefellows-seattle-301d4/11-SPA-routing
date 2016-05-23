@@ -2,7 +2,10 @@
   var aboutController = {};
 
   aboutController.index = function() {
-    /* TODO: We only want to display the about section! */
+    /* DONE: We only want to display the about section! */
+    $('#articles').hide();
+    $('#blog-stats').hide();
+    $('#about').show();
   };
 
   module.aboutController = aboutController;
