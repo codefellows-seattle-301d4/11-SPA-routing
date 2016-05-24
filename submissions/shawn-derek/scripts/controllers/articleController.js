@@ -12,6 +12,8 @@
         back and forth between home and about?*/
     /* DONE: Also be sure to reveal only the articles section */
     $('#about').hide();
+    $('#blog-stats').hide();
+    $('#write').hide();
     $('#articles').show();
   };
 

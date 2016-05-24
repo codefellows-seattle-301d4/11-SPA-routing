@@ -3,6 +3,8 @@
     single controller function to handle it: */
 page('/', index);
 page('/about', about);
+page('/stats', stats);
+page('/new', newArticle);
 /* TODO:DONE What function do we call to activate page.js?
     Fire it off now, to execute it: */
 page();
@@ -14,4 +16,12 @@ function index(){
 function about(){
   aboutController.index();
 
+}
+
+function stats(){
+  adminController.index();
+}
+
+function newArticle() {
+  adminController.newArticle();
 }
