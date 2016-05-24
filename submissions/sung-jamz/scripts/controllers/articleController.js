@@ -11,7 +11,9 @@
         back and forth between home and about?
 
     /* DONE: Also be sure to reveal only the articles section */
-    Article.fetchAll(articleView.initIndexPage);
+    if(Article.all.length === 0) {
+      Article.fetchAll(articleView.initIndexPage);
+    };
 
     $('#about').hide();
     $('#blog-stats').hide();
