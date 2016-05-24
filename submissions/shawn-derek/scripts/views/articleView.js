@@ -125,9 +125,9 @@
 
   articleView.initAdminPage = function() {
     var template = Handlebars.compile($('#author-template').text());
+    $('.author-stats').html('');
 
     Article.numWordsByAuthor().forEach(function(stat) {
-      console.log(template(stat));
       $('.author-stats').append(template(stat));
     });
     $('#blog-stats .articles').text(Article.all.length);
