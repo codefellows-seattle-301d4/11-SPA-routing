@@ -2,6 +2,7 @@
   var adminController = {};
 
   adminController.index = function() {
+
     Article.fetchAll(articleView.initAdminPage);
 
     $('#articles').hide();
